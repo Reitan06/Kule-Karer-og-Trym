@@ -12,10 +12,19 @@ header{
     height: 150px;
     background-color: blue;
     z-index: -1;
+}
 
+.soldat_knapp_container{
+    background-color: lightcoral;
+    z-index: 2;
+}
+
+p{
+    display: flex;
+    justify-content: center;
 }
 
 body{
     background-color: white;
-    z-index: 1;
+    z-index: 1; /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus/
 }
