@@ -26,5 +26,5 @@ p{
 
 body{
     background-color: white;
-    z-index: 1; /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus/
+    z-index: 1; /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
 }
