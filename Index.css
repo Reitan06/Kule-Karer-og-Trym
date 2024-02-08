@@ -17,6 +17,7 @@ header{
 .soldat_knapp_container{
     background-color: lightcoral;
     z-index: 2;
+    border: 2px solid black;
 }
 
 p{
