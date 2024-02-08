@@ -4,6 +4,7 @@
     padding: 0;
     display: block;
     font-family: "Dokdo", system-ui;
+    font-size: 30px;
 
 }
 
@@ -29,7 +30,7 @@ p{
 
 body{
     background-image: url(bilder/Wild_West.png);
-    background-size: cover;
 	background-repeat: no-repeat;
+    width: 200%;
     z-index: 1; /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
 }
