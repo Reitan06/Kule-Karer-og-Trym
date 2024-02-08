@@ -1,12 +1,4 @@
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -14,42 +6,11 @@
 
 }
 
-h1 {
-    color: blue;
-    border: 2px solid black;
-    border-radius: 2px;
-    background-color: aqua;
+header{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 150px;
+    background-color: blue;
+    z-index: -1;
+
 }
-
-p{
-    font-size: larger;
-    color: floralwhite;
-}
-
-#Zeb{
-    font-size: 100px;
-    color: darkgoldenrod;
-    background-color: antiquewhite;
-    border-width: 20px;
-    border-color: aqua;
-    border-radius: 30px;
-    text-align: center;
-    margin: 20px;
-}
-
-
-.Ekstra_boks{
-    display: flex;
-    align-items: center;
-    font-size: x-large;
-    color: blanchedalmond;
-    text-decoration: double;
-    justify-content: center;
-    margin: 30px;
-}
-
-#trym{
-    width: 100%;
-    margin-top: 30px;
-}
-
