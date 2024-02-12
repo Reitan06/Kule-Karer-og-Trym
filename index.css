@@ -12,15 +12,15 @@ header{
     display: grid;
     grid-template-columns: 2fr 3fr 2fr;
     height: 120px;
-    background-color: blue;
+    background-color: lightgoldenrodyellow;
     z-index: -1;
     font-size: 40px;
+    opacity: 20%;
 }
 
 .soldat_knapp_container{
-    background-color: lightcoral;
+    background-color: yellow;
     z-index: 2;
-    border: 2px solid black;
     opacity: 50%;
 }
 
