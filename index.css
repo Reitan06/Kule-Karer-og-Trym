@@ -30,6 +30,7 @@ p{
 
 body{
     background-image: url(bilder/Wild_West.png);
+    background-size: cover;
 	background-repeat: no-repeat;
     z-index: 1; /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
 }
