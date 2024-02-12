@@ -16,10 +16,11 @@ header {
     background-color: #d4950bba;
     font-size: 40px;
     opacity: 70%;
+    border: 2px black solid;
 }
 
 .soldat_knapp_container {
-    background-color: yellow;
+    background-color: #ffff0057;
     opacity: 50%;
 }
 
@@ -42,6 +43,5 @@ body {
     background-image: url(bilder/Wild_West.png);
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 1;
     /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
 }
