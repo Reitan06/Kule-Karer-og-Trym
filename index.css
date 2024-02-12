@@ -35,8 +35,3 @@ body{
 	background-repeat: no-repeat;
     z-index: 1; /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
 }
-
-main {
-    display: flex;
-    justify-content: space-between;
-}
