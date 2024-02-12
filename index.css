@@ -16,12 +16,16 @@ header {
     background-color: #d4950bba;
     font-size: 40px;
     opacity: 75%;
+}
+
+#gap_container{
     border: 2px black solid;
 }
 
 .soldat_knapp_container {
     background-color: #ffff0057;
     opacity: 50%;
+    border: 2px black solid;
 }
 
 p {
@@ -36,7 +40,7 @@ p {
 
 
 main{
-    height: 500px;
+    height: 550px;
 }
 
 body {
