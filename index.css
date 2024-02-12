@@ -10,11 +10,10 @@
 
 header{
     display: grid;
-    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr;
     height: 120px;
-    background-color: rgb(235, 104, 56);
+    background-color: blue;
     z-index: -1;
-    font-size: 40px;
 }
 
 .soldat_knapp_container{
@@ -31,7 +30,6 @@ p{
 
 body{
     background-image: url(bilder/Wild_West.png);
-    background-size: cover;
 	background-repeat: no-repeat;
     z-index: 1; /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
 }
