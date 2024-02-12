@@ -12,7 +12,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     height: 120px;
-    background-color: blue;
+    background-color: rgb(242, 173, 173);
     z-index: -1;
     font-size: 40px;
 }
