@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: "Dokdo", system-ui;
+    font-size: 30px;
+
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 120px;
+    background-color: lightgoldenrodyellow;
+    z-index: -1;
+    font-size: 40px;
+    opacity: 20%;
+}
+
+.soldat_knapp_container{
+    background-color: yellow;
+    z-index: 2;
+    opacity: 50%;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-image: url(bilder/Wild_West.png);
+	background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1; /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
+}
