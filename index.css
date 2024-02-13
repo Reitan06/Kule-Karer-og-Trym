@@ -10,6 +10,7 @@
 }
 
 header {
+    position: fixed;
     display: grid;
     grid-template-columns: 2fr 3fr 2fr;
     height: 120px;
@@ -38,13 +39,18 @@ p {
     justify-content: center;
 }
 
+img {
+    height: 400px ;
+    width: 200px;
+}
+
 
 main{
-    width: 100%;
+    width: 200%;
     height: 550px;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-end;
     position: fixed;
 }
 
