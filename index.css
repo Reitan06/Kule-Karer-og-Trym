@@ -28,6 +28,7 @@ header {
     background-color: #ffff0057;
     opacity: 50%;
     border: 2px black solid;
+    display: flex;
 }
 
 p {
