@@ -41,7 +41,10 @@ p {
 
 main{
     height: 550px;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: fixed;
 }
 
 body {
