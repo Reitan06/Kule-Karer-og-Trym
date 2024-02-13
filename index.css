@@ -30,6 +30,10 @@ header {
     border: 2px black solid;
     display: flex;
 }
+header img {
+    height: 110;
+    width: 100%;
+}
 
 p {
     display: flex;
