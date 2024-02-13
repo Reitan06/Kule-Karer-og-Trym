@@ -63,8 +63,9 @@ body {
     background-size: cover;
     /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
 }
-#soldat_1_knapp {
+button {
     height: 120px;
     width:25%;
     background-color: #ffd0009f;
+    border: 5px solid darkgoldenrod;
 }
