@@ -82,3 +82,10 @@ button {
     height: 184px;
     width: 184px;
 }
+
+/** Midlertidig**/
+
+.litenknapp {
+    height: 20px;
+    width:25%;
+}
