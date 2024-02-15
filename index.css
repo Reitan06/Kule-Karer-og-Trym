@@ -29,6 +29,7 @@ header {
     opacity: 50%;
     border: 2px black solid;
     display: flex;
+    opacity: 0%;
 }
 header img {
     height: 110px;
