@@ -1,17 +1,16 @@
-let display = document.querySelector('#timer');
+let display = document.getElementById('timer');
 let seconds = 0;
-let timerInterval;
+let minutes = 0;
 
 function startTimer() {
-    timerInterval = setInterval(function () {
-        let minutes = parseInt(seconds / 60, 10);
-        let remainingSeconds = parseInt(seconds % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        remainingSeconds = remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
-
-        display.textContent = minutes + ":" + remainingSeconds;
-
+    setInterval(function () {
         seconds++;
+        if (seconds === 60) {
+            seconds = 0;
+            minutes++;
+        }
+        let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+        let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
 }
