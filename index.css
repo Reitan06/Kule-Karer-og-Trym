@@ -75,4 +75,5 @@ button {
     background-color: #ffd0009f;
     border: 5px solid darkgoldenrod;
     z-index: 7;
+    cursor: pointer;
 }
