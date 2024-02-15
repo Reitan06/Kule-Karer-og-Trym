@@ -23,5 +23,5 @@ function summonJohan() {
     johan.classList.add("Johan");
     johan.style.left = "80px"; 
     johan.style.top = "640px"; 
-    document.body.appendChild(johan);
+    document.getElementById("main").appendChild(johan);
 }
