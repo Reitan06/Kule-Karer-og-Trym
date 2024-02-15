@@ -29,9 +29,10 @@ header {
     opacity: 50%;
     border: 2px black solid;
     display: flex;
+    opacity: 0%;
 }
 header img {
-    height: 110;
+    height: 110px;
     width: 100%;
 }
 
@@ -45,7 +46,7 @@ p {
     justify-content: center;
 }
 
-img {
+main img {
     height: 400px ;
     width: 200px;
     padding-top: 50px;
