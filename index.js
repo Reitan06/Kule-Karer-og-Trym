@@ -18,10 +18,10 @@ function startTimer() {
 }
 function summonJohan() {
     const johan = document.createElement("img");
-        johan.src = "bilder/johan_walking.png";
-        johan.alt = "Johan"; 
-        johan.classList.add("Johan");
-        johan.style.left = 80 + "px";
-        johan.style.top = 640 + "px";
-        document.body.appendChild("johan")
+    johan.src = "bilder/johan_walking.png";
+    johan.alt = "Johan"; 
+    johan.classList.add("Johan");
+    johan.style.left = "80px"; 
+    johan.style.top = "640px"; 
+    document.body.appendChild(johan);
 }
