@@ -16,3 +16,9 @@ function startTimer() {
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
 }
+function summonJohan() {
+    const johan = document.createElement("img");
+        johan.src = "bilder/johan_walking.png";
+        johan.alt = "Johan"; 
+        johan.classList.add("Johan");
+}
