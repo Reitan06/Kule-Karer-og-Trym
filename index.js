@@ -22,6 +22,13 @@ function summonJohan() {
     johan.alt = "Johan"; 
     johan.classList.add("Johan");
     johan.style.left = "80px"; 
-    johan.style.top = "640px"; 
+    johan.style.top = "600px"; 
     document.body.appendChild(johan);
+    let position = parseInt(johan.style.left); 
+        let windowWidth = window.innerWidth;
+        if (position < windowWidth) {
+            position += 5; 
+            johan.style.left = position + "px"; 
+            setTimeout(moveJohan, 50);
+        }
 }
