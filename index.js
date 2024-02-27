@@ -17,13 +17,13 @@ function startTimer() {
     }, 1000);
 }
 function summonTrym() {
-    const johan = document.createElement("img");
-    johan.src = "bilder/johan_walking.png";
-    johan.alt = "Johan"; 
-    johan.classList.add("Johan");
-    johan.style.left = "80px"; 
-    johan.style.top = "600px"; 
-    document.body.appendChild(johan);
+    const trym = document.createElement("img");
+    trym.src = "bilder/WalkingTrym.png";
+    trym.alt = "trym"; 
+    trym.classList.add("trym");
+    trym.style.left = "80px"; 
+    trym.style.top = "600px"; 
+    document.body.appendChild(trym);
 }
 function moveTrym() {
     let position = parseInt(johan.style.left); // Get the current position
