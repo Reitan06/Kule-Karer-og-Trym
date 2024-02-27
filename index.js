@@ -43,7 +43,7 @@ function summonPer() {
     const per = document.createElement("img");
     per.src = "bilder/MovingPer.jpg";
     per.alt = "Per"; 
-    per.classList.add("Per");
+    per.classList.add("per");
     per.style.left = "80px"; 
     per.style.top = "600px"; 
     document.body.appendChild(per);
