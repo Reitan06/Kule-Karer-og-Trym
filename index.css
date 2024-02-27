@@ -35,6 +35,15 @@ header {
     display: flex;
     opacity: 100%;
 }
+
+.penger{
+    display: flex;
+    height: 60px;
+    width: 240px;
+    margin: auto;
+    border-bottom: 5px black solid;
+}
+
 header img {
     height: 110px;
     width: 100%;
