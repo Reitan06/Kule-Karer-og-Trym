@@ -54,7 +54,7 @@ function summonTrym() {
 
     function summonPer() {
         const per = document.createElement("img");
-        per.src = "bilder/MovingPer.jpg";
+        per.src = "bilder/MovingPer.png";
         per.alt = "Per";
         per.classList.add("per");
         per.style.left = "80px";
