@@ -40,13 +40,13 @@ function summonJohan() {
 }
 
 function summonPer() {
-    const johan = document.createElement("img");
-    johan.src = "bilder/johan_walking.png";
-    johan.alt = "Johan"; 
-    johan.classList.add("Johan");
-    johan.style.left = "80px"; 
-    johan.style.top = "600px"; 
-    document.body.appendChild(johan);
+    const per = document.createElement("img");
+    per.src = "bilder/MovingPer.jpg";
+    per.alt = "Per"; 
+    per.classList.add("Per");
+    per.style.left = "80px"; 
+    per.style.top = "600px"; 
+    document.body.appendChild(per);
 }
 
 function summonJokkis() {
