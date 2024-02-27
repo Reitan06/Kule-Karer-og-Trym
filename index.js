@@ -25,16 +25,6 @@ function summonTrym() {
     trym.style.top = "400px"; 
     document.body.appendChild(trym);
 }
-function moveTrym() {
-    let position = parseInt(johan.style.left); // Get the current position
-    const screenWidth = window.innerWidth; // Get the width of the screen
-    const johanWidth = johan.offsetWidth; // Get the width of the johan image
-    if (position + johanWidth < screenWidth) {
-        position += 5; // Adjust the speed of movement by changing the value
-        johan.style.left = position + "px"; // Update the position
-        setTimeout(moveJohan, 50); // Call the function again after a short delay
-    }
-}
 
 function summonJohan() {
     const johan = document.createElement("img");
@@ -44,16 +34,6 @@ function summonJohan() {
     johan.style.left = "80px"; 
     johan.style.top = "600px"; 
     document.body.appendChild(johan);
-}
-function moveJohan() {
-    let position = parseInt(johan.style.left); // Get the current position
-    const screenWidth = window.innerWidth; // Get the width of the screen
-    const johanWidth = johan.offsetWidth; // Get the width of the johan image
-    if (position + johanWidth < screenWidth) {
-        position += 5; // Adjust the speed of movement by changing the value
-        johan.style.left = position + "px"; // Update the position
-        setTimeout(moveJohan, 50); // Call the function again after a short delay
-    }
 }
 
 function summonPer() {
@@ -65,16 +45,6 @@ function summonPer() {
     johan.style.top = "600px"; 
     document.body.appendChild(johan);
 }
-function movePer() {
-    let position = parseInt(johan.style.left); // Get the current position
-    const screenWidth = window.innerWidth; // Get the width of the screen
-    const johanWidth = johan.offsetWidth; // Get the width of the johan image
-    if (position + johanWidth < screenWidth) {
-        position += 5; // Adjust the speed of movement by changing the value
-        johan.style.left = position + "px"; // Update the position
-        setTimeout(moveJohan, 50); // Call the function again after a short delay
-    }
-}
 
 function summonJokkis() {
     const jokkis = document.createElement("img");
@@ -84,14 +54,4 @@ function summonJokkis() {
     jokkis.style.left = "80px"; 
     jokkis.style.top = "600px"; 
     document.body.appendChild(jokkis);
-}
-function moveJokkis() {
-    let position = parseInt(johan.style.left); // Get the current position
-    const screenWidth = window.innerWidth; // Get the width of the screen
-    const johanWidth = johan.offsetWidth; // Get the width of the johan image
-    if (position + johanWidth < screenWidth) {
-        position += 5; // Adjust the speed of movement by changing the value
-        johan.style.left = position + "px"; // Update the position
-        setTimeout(moveJohan, 50); // Call the function again after a short delay
-    }
 }
