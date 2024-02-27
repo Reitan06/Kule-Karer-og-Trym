@@ -77,13 +77,13 @@ function movePer() {
 }
 
 function summonJokkis() {
-    const johan = document.createElement("img");
-    johan.src = "bilder/johan_walking.png";
-    johan.alt = "Johan"; 
-    johan.classList.add("Johan");
-    johan.style.left = "80px"; 
-    johan.style.top = "600px"; 
-    document.body.appendChild(johan);
+    const jokkis = document.createElement("img");
+    jokkis.src = "bilder/MovingJokkis.png";
+    jokkis.alt = "Jokkis"; 
+    jokkis.classList.add("jokkis");
+    jokkis.style.left = "80px"; 
+    jokkis.style.top = "600px"; 
+    document.body.appendChild(jokkis);
 }
 function moveJokkis() {
     let position = parseInt(johan.style.left); // Get the current position
