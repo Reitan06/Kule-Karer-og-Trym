@@ -87,8 +87,12 @@ button {
     width: 184px;
 }
 .jokkis {
-    height: 100px;
-    width: 70px;
+    height: 150px;
+    width: 56px;
+}
+.trym {
+    height: 500px;
+    width: 150px;
 }
 
 /** Midlertidig**/
