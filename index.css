@@ -73,14 +73,6 @@ body {
     background-size: cover;
     /**denne funker ikkke enda, har position static, vet ikke hvorfor burde spørre rasmus**/
 }
-button {
-    height: 120px;
-    width:25%;
-    background-color: #ffd0009f;
-    border: 5px solid darkgoldenrod;
-    z-index: 7;
-    cursor: pointer;
-}
 
 .Johan {
     height: 184px;
@@ -102,11 +94,15 @@ button {
 /** Midlertidig**/
 
 .litenknapp {
-    height: 200px;
-    width:65%;
+    height: 400px;
+    width: 65%;
     font-size: 85px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    background-color: #ffd0009f;
+    border: 5px solid darkgoldenrod;
+    border-radius: 20px;
+    cursor: pointer;
 }
