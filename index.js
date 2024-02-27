@@ -4,15 +4,9 @@ let display = document.getElementById('timer');
 let seconds = 0;
 let minutes = 0;
 
-let interval;
+
 function startTimer() {
-    if (interval != undefined) {
-    clearInterval(interval);
-    seconds = 0
-    minutes = 0
-    }
-    else {
-    interval = setInterval(function () {
+    setInterval(function () {
         seconds++;
         if (seconds === 60) {
             seconds = 0;
@@ -22,8 +16,10 @@ function startTimer() {
         let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
+    document.getElementById('startknapp').style.display = 'none'
 }
-}
+
+
 function moveCharacterRight(characterElement) {
     let currentPosition = 80; // Initial left position
     let movementSpeed = 5; // Adjust movement speed as needed
