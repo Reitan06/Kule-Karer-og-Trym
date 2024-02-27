@@ -7,10 +7,11 @@ let minutes = 0;
 let interval;
 function startTimer() {
     if (interval != undefined) {
-    clearInterval(interval);
     seconds = 0
     minutes = 0
+    clearInterval(interval)
     }
+    else {
     interval = setInterval(function () {
         seconds++;
         if (seconds === 60) {
@@ -20,7 +21,7 @@ function startTimer() {
         let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
         let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = formattedMinutes + ":" + formattedSeconds;
-    }, 1000);
+    }, 1000);}
 }
 function summonTrym() {
     const trym = document.createElement("img");
