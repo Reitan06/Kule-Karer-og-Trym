@@ -22,7 +22,7 @@ function summonTrym() {
     trym.alt = "trym"; 
     trym.classList.add("trym");
     trym.style.left = "80px"; 
-    trym.style.top = "600px"; 
+    trym.style.top = "400px"; 
     document.body.appendChild(trym);
 }
 function moveTrym() {
