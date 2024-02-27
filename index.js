@@ -7,9 +7,9 @@ let minutes = 0;
 let interval;
 function startTimer() {
     if (interval != undefined) {
-    clearInterval(interval);
-    seconds = 0
-    minutes = 0
+        clearInterval(interval);
+        seconds = 0
+        minutes = 0
     }
     interval = setInterval(function () {
         seconds++;
@@ -21,43 +21,59 @@ function startTimer() {
         let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
-}
-function summonTrym() {
-    const trym = document.createElement("img");
-    trym.src = "bilder/WalkingTrym.png";
-    trym.alt = "trym"; 
-    trym.classList.add("trym");
-    trym.style.left = "80px"; 
-    trym.style.top = "400px"; 
-    document.body.appendChild(trym);
-}
 
-function summonJohan() {
-    const johan = document.createElement("img");
-    johan.src = "bilder/johan_walking.png";
-    johan.alt = "Johan"; 
-    johan.classList.add("Johan");
-    johan.style.left = "80px"; 
-    johan.style.top = "600px"; 
-    document.body.appendChild(johan);
-}
+    function moveCharacterRight(characterElement) {
+        let currentPosition = 80; // Initial left position
+        let movementSpeed = 5; // Adjust movement speed as needed
+        let interval = setInterval(function () {
+            currentPosition += movementSpeed;
+            characterElement.style.left = currentPosition + "px";
+            if (currentPosition >= window.innerWidth) {
+                clearInterval(interval);
+            }
+        }, 100); // Adjust interval for smoother movement
+    }
 
-function summonPer() {
-    const per = document.createElement("img");
-    per.src = "bilder/MovingPer.jpg";
-    per.alt = "Per"; 
-    per.classList.add("per");
-    per.style.left = "80px"; 
-    per.style.top = "600px"; 
-    document.body.appendChild(per);
-}
+    function summonTrym() {
+        const trym = document.createElement("img");
+        trym.src = "bilder/WalkingTrym.png";
+        trym.alt = "trym";
+        trym.classList.add("trym");
+        trym.style.left = "80px";
+        trym.style.top = "400px";
+        document.body.appendChild(trym);
+        moveCharacterRight(trym); // Start moving Trym right after summoning
+    }
 
-function summonJokkis() {
-    const jokkis = document.createElement("img");
-    jokkis.src = "bilder/MovingJokkis.png";
-    jokkis.alt = "Jokkis"; 
-    jokkis.classList.add("jokkis");
-    jokkis.style.left = "80px"; 
-    jokkis.style.top = "600px"; 
-    document.body.appendChild(jokkis);
-}
+    function summonJohan() {
+        const johan = document.createElement("img");
+        johan.src = "bilder/johan_walking.png";
+        johan.alt = "Johan";
+        johan.classList.add("Johan");
+        johan.style.left = "80px";
+        johan.style.top = "600px";
+        document.body.appendChild(johan);
+        moveCharacterRight(johan); // Start moving Johan right after summoning
+    }
+
+    function summonPer() {
+        const per = document.createElement("img");
+        per.src = "bilder/MovingPer.jpg";
+        per.alt = "Per";
+        per.classList.add("per");
+        per.style.left = "80px";
+        per.style.top = "600px";
+        document.body.appendChild(per);
+        moveCharacterRight(per); // Start moving Per right after summoning
+    }
+
+    function summonJokkis() {
+        const jokkis = document.createElement("img");
+        jokkis.src = "bilder/MovingJokkis.png";
+        jokkis.alt = "Jokkis";
+        jokkis.classList.add("jokkis");
+        jokkis.style.left = "80px";
+        jokkis.style.top = "600px";
+        document.body.appendChild(jokkis);
+        moveCharacterRight(jokkis); // Start moving Jokkis right after summoning
+    }
