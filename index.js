@@ -23,6 +23,7 @@ function startTimer() {
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
 }
+}
 function summonTrym() {
     const trym = document.createElement("img");
     trym.src = "bilder/WalkingTrym.png";
