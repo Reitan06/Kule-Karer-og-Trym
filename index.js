@@ -19,6 +19,18 @@ function startTimer() {
     document.getElementById('startknapp').style.display = 'none'
 }
 
+
+function moveCharacterRight(characterElement) {
+    let currentPosition = 80; // Initial left position
+    let movementSpeed = 5; // Adjust movement speed as needed
+    let interval = setInterval(function () {
+        currentPosition += movementSpeed;
+        characterElement.style.left = currentPosition + "px";
+        if (currentPosition >= window.innerWidth) {
+            clearInterval(interval);
+        }
+    }, 100); // Adjust interval for smoother movement
+}
 function summonTrym() {
     const trym = document.createElement("img");
     trym.src = "bilder/WalkingTrym.png";
