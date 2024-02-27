@@ -6,8 +6,11 @@ let minutes = 0;
 
 let interval;
 function startTimer() {
-    if (interval != undefined);
+    if (interval != undefined) {
     clearInterval(interval);
+    seconds = 0
+    minutes = 0
+    }
     interval = setInterval(function () {
         seconds++;
         if (seconds === 60) {
