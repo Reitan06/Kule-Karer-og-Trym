@@ -35,6 +35,15 @@ header {
     display: flex;
     opacity: 100%;
 }
+
+.penger{
+    display: flex;
+    height: 60px;
+    width: 240px;
+    margin: auto;
+    border-bottom: 5px black solid;
+}
+
 header img {
     height: 110px;
     width: 100%;
@@ -102,9 +111,9 @@ button {
 /** Midlertidig**/
 
 .litenknapp {
-    height: 20px;
-    width:15%;
-    font-size: 15px;
+    height: 200px;
+    width:65%;
+    font-size: 85px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
