@@ -7,10 +7,11 @@ let minutes = 0;
 let interval;
 function startTimer() {
     if (interval != undefined) {
-        clearInterval(interval);
-        seconds = 0
-        minutes = 0
+    clearInterval(interval);
+    seconds = 0
+    minutes = 0
     }
+    else {
     interval = setInterval(function () {
         seconds++;
         if (seconds === 60) {
@@ -21,29 +22,16 @@ function startTimer() {
         let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
-
-    function moveCharacterRight(characterElement) {
-        let currentPosition = 80; // Initial left position
-        let movementSpeed = 5; // Adjust movement speed as needed
-        let interval = setInterval(function () {
-            currentPosition += movementSpeed;
-            characterElement.style.left = currentPosition + "px";
-            if (currentPosition >= window.innerWidth) {
-                clearInterval(interval);
-            }
-        }, 100); // Adjust interval for smoother movement
-    }
-
-    function summonTrym() {
-        const trym = document.createElement("img");
-        trym.src = "bilder/WalkingTrym.png";
-        trym.alt = "trym";
-        trym.classList.add("trym");
-        trym.style.left = "80px";
-        trym.style.top = "400px";
-        document.body.appendChild(trym);
-        moveCharacterRight(trym); // Start moving Trym right after summoning
-    }
+}
+function summonTrym() {
+    const trym = document.createElement("img");
+    trym.src = "bilder/WalkingTrym.png";
+    trym.alt = "trym"; 
+    trym.classList.add("trym");
+    trym.style.left = "80px"; 
+    trym.style.top = "400px"; 
+    document.body.appendChild(trym);
+}
 
     function summonJohan() {
         const johan = document.createElement("img");
