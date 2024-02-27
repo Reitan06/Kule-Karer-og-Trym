@@ -4,8 +4,11 @@ let display = document.getElementById('timer');
 let seconds = 0;
 let minutes = 0;
 
+let interval;
 function startTimer() {
-    setInterval(function () {
+    if (interval != undefined);
+    clearInterval(interval);
+    interval = setInterval(function () {
         seconds++;
         if (seconds === 60) {
             seconds = 0;
