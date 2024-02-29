@@ -30,30 +30,50 @@ function startTimer() {
 
 }
 
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+var Trym = new Image();
+Trym.src = "bilder/WalkingTrym.png";
+var Johan = new Image();
+Johan.src = "bilder/johan_walking.png";
+var Per = new Image();
+Per.src = "bilder/MovingPer.png";
+var Jokkis = new Image();
+Jokkis.src = "bilder/MovingJokkis.png";
+var x = 0;
+var y = 220;
+var images = [];
+var positions = [];
+
 let trymCost = 100
 
 function summonTrym() {
     if (ataler >= trymCost) {
         ataler -= trymCost;
-        const trym = document.createElement("img");
-        trym.src = "bilder/WalkingTrym.png";
-        trym.alt = "trym";
-        trym.classList.add("trym");
-        trym.style.left = "80px";
-        trym.style.top = "400px";
-        document.body.appendChild(trym);
+        ataler -= 50;
     }
+
+    var newTrym = new Image();
+    newTrym.src = "bilder/WalkingTrym.png"
+    images.push(newTrym);
+    positions.push({ x: 0, y: 0 });
+    newTrym.onload = function() {
+        if (images.length === 1) {
+            moveTrym();
+        }
+    };
 }
 
+function moveTrym() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < images.length; i++) {
+        positions[i].x += 1;
+        positions[i].y = 220;
+        ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
+    }
+    requestAnimationFrame(moveTrym);
+}
 
-var canvas = document.getElementById('myCanvas');
-var ctx = canvas.getContext('2d');
-var img = new Image();
-img.src = "bilder/johan_walking.png";
-var x = 0;
-var y = 220;
-var images = [];
-var positions = [];
 
 let JohanCost = 50
 
@@ -63,11 +83,11 @@ function summonJohan() {
         ataler -= 50
  }
 
-    var newImg = new Image();
-    newImg.src = "bilder/johan_walking.png";
-    images.push(newImg);
+    var newJohan = new Image();
+    newJohan.src = "bilder/johan_walking.png";
+    images.push(newJohan);
     positions.push({ x: 0, y: 0 });
-    newImg.onload = function() {
+    newJohan.onload = function() {
     if (images.length === 1) {
         moveJohan();
     }
@@ -90,15 +110,28 @@ let perCost = 20
 function summonPer() {
     if (ataler >= perCost) {
         ataler -= perCost;
-    const per = document.createElement("img");
-    per.src = "bilder/MovingPer.png";
-    per.alt = "Per";
-    per.classList.add("per");
-    per.style.left = "80px";
-    per.style.top = "600px";
-    document.body.appendChild(per);
-    moveCharacterRight(per); // Start moving Per right after summoning
+        ataler -= 50;
     }
+
+    var newPer = new Image();
+    newPer.src = "bilder/MovingPer.png";
+    images.push(newPer);
+    positions.push({ x: 0, y: 0 });
+    newPer.onload = function() {
+        if (images.length === 1) {
+            movePer();
+        }
+    };
+}
+
+function movePer() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < images.length; i++) {
+        positions[i].x += 1;
+        positions[i].y = 220;
+        ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
+    }
+    requestAnimationFrame(movePer);
 }
 
 let jokkisCost = 10
@@ -106,15 +139,28 @@ let jokkisCost = 10
 function summonJokkis() {
     if (ataler >= jokkisCost) {
         ataler -= jokkisCost;
-    const jokkis = document.createElement("img");
-    jokkis.src = "bilder/MovingJokkis.png";
-    jokkis.alt = "Jokkis";
-    jokkis.classList.add("jokkis");
-    jokkis.style.left = "80px";
-    jokkis.style.top = "600px";
-    document.body.appendChild(jokkis);
-    moveCharacterRight(jokkis); // Start moving Jokkis right after summoning
+        ataler -= 50;
     }
+
+    var newJokkis = new Image();
+    newJokkis.src = "bilder/MovingJokkis.png";
+    images.push(newJokkis);
+    positions.push({ x: 0, y: 0 });
+    newJokkis.onload = function() {
+        if (images.length === 1) {
+            moveJokkis();
+        }
+    };
+}
+
+function moveJokkis() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < images.length; i++) {
+        positions[i].x += 1;
+        positions[i].y = 220;
+        ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
+    }
+    requestAnimationFrame(moveJokkis);
 }
 
 function startSound() {
