@@ -41,7 +41,6 @@ Per.src = "bilder/MovingPer.png";
 var Jokkis = new Image();
 Jokkis.src = "bilder/MovingJokkis.png";
 var x = 0;
-var y = 220;
 var images = [];
 var positions = [];
 
