@@ -50,7 +50,7 @@ function summonTrym() {
     if (ataler >= trymCost) {
         ataler -= trymCost;
         ataler -= 50;
-    }
+    
 
     var newTrym = new Image();
     newTrym.src = "bilder/WalkingTrym.png"
@@ -61,6 +61,7 @@ function summonTrym() {
             moveTrym();
         }
     };
+    }
 }
 
 function moveTrym() {
@@ -80,7 +81,7 @@ function summonJohan() {
     if (ataler >= JohanCost) {
         ataler -= JohanCost;
         ataler -= 50
- }
+ 
 
     var newJohan = new Image();
     newJohan.src = "bilder/johan_walking.png";
@@ -89,8 +90,9 @@ function summonJohan() {
     newJohan.onload = function() {
     if (images.length === 1) {
         moveJohan();
+        }
+    };
     }
-}
 }
 
 function moveJohan() {
@@ -110,7 +112,7 @@ function summonPer() {
     if (ataler >= perCost) {
         ataler -= perCost;
         ataler -= 50;
-    }
+    
 
     var newPer = new Image();
     newPer.src = "bilder/MovingPer.png";
@@ -121,6 +123,7 @@ function summonPer() {
             movePer();
         }
     };
+}
 }
 
 function movePer() {
@@ -139,7 +142,7 @@ function summonJokkis() {
     if (ataler >= jokkisCost) {
         ataler -= jokkisCost;
         ataler -= 50;
-    }
+    
 
     var newJokkis = new Image();
     newJokkis.src = "bilder/MovingJokkis.png";
@@ -150,6 +153,7 @@ function summonJokkis() {
             moveJokkis();
         }
     };
+    }
 }
 
 function moveJokkis() {
