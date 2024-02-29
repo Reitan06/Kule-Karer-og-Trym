@@ -68,7 +68,7 @@ function summonJohan() {
         requestAnimationFrame(moveImage);
     ataler -= 50 }
 }
-
+''
 let perCost = 20
 
 function summonPer() {
