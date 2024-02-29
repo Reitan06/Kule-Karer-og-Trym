@@ -84,7 +84,7 @@ function moveJohan() {
     }
     requestAnimationFrame(moveJohan);
 }
-
+''
 let perCost = 20
 
 function summonPer() {
