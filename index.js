@@ -52,16 +52,20 @@ function summonTrym() {
     ataler -= 100
 }
 
+let JohanCost = 50
+
 function summonJohan() {
-    const johan = document.createElement("img");
-    johan.src = "bilder/johan_walking.png";
-    johan.alt = "Johan";
-    johan.classList.add("Johan");
-    johan.style.left = "80px";
-    johan.style.top = "600px";
-    document.body.appendChild(johan);
-    moveCharacterRight(johan); // Start moving Johan right after summoning
-    ataler -= 50
+    if (ataler >= JohanCost) {
+        ataler -= JohanCost;
+        const johan = document.createElement("img");
+        johan.src = "bilder/johan_walking.png";
+        johan.alt = "Johan";
+        johan.classList.add("Johan");
+        johan.style.left = "80px";
+        johan.style.top = "600px";
+        document.body.appendChild(johan);
+        moveCharacterRight(johan); // Start moving Johan right after summoning
+    }
 }
 
 function summonPer() {
