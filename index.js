@@ -17,6 +17,14 @@ function startTimer() {
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
     document.getElementById('startknapp').style.display = 'none'
+    let ataler = 50;
+    
+    setInterval(function() {
+        ataler++;
+        console.log("Antall tellere: " + ataler);
+        document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
+    }, 1000);
+
 }
 
 
@@ -77,12 +85,4 @@ function summonTrym() {
         moveCharacterRight(jokkis); // Start moving Jokkis right after summoning
         ataler -=10
     }
-
-    let ataler = 50;
-    
-    setInterval(function() {
-        ataler++;
-        console.log("Antall tellere: " + ataler);
-        document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
-    }, 1000);
 
