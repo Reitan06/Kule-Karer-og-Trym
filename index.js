@@ -30,17 +30,6 @@ function startTimer() {
 
 }
 
-function moveCharacterRight(characterElement) {
-    let currentPosition = 80; // Initial left position
-    let movementSpeed = 5; // Adjust movement speed as needed
-    let interval = setInterval(function () {
-        currentPosition += movementSpeed;
-        characterElement.style.left = currentPosition + "px";
-        if (currentPosition >= window.innerWidth) {
-            clearInterval(interval);
-        }
-    }, 100); // Adjust interval for smoother movement
-}
 
 let trymCost = 100
 
@@ -62,11 +51,16 @@ let JohanCost = 50
 function summonJohan() {
     if (ataler >= JohanCost) {
         ataler -= JohanCost;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        x += 1;
-        ctx.drawImage(img, x, y, 184, 184);
-        requestAnimationFrame(moveImage);
-    ataler -= 50 }
+        ataler -= 50
+ }
+        setInterval(moveJohan(),10)
+}
+
+function moveJohan() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    x += 1;
+    ctx.drawImage(img, x, y, 184, 184);
+    requestAnimationFrame(moveJohan);
 }
 
 let perCost = 20
@@ -120,6 +114,3 @@ var x = 0;
 var y = 220;
 
 
-img.onload = function () {
-    moveImage();
-};
