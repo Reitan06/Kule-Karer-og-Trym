@@ -83,5 +83,6 @@ function summonTrym() {
     setInterval(function() {
         ataler++;
         console.log("Antall tellere: " + ataler);
+        document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler;
     }, 1000);
 
