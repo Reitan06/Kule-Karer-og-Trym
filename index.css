@@ -68,6 +68,16 @@ main img {
     margin-bottom: 100px;
 }
 
+#saloon {
+    position: fixed;
+    left: 0px;
+}
+
+#totem {
+    position: fixed;
+    right: 0px;
+}
+
 
 main{
     width: 100%;
@@ -148,4 +158,10 @@ body {
 
 .dropdown-content a:hover {
     background-color: #d4950bba
+}
+
+canvas {
+    border: 10px solid black;
+    margin: auto;
+    margin-bottom: 110px;
 }
