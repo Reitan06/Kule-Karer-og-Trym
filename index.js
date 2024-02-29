@@ -5,6 +5,10 @@ let seconds = 0;
 let minutes = 0;
 let ataler = 50;
 
+function startSpill() {
+    startSound();
+    startTimer();
+}
 function startTimer() {
     setInterval(function () {
         seconds++;
@@ -25,7 +29,16 @@ function startTimer() {
     }, 1000);
 
 }
+function startSound() {
+    var themesong = document.getElementById("themesong");
 
+    // Check if the audio is paused or not
+    if (themesong.paused) {
+        themesong.play(); // If paused, play the audio
+    } else {
+        themesong.pause(); // If playing, pause the audio
+    }
+}
 
 function moveCharacterRight(characterElement) {
     let currentPosition = 80; // Initial left position
