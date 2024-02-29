@@ -127,3 +127,31 @@ body {
     margin-bottom: 100px;
     left: 20%;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+    transition: 0.4s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #d4950bba;
+    opacity: 75%;
+    color: black;
+    z-index: 2;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 1vh;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #d4950bba
+}
