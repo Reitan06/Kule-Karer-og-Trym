@@ -57,9 +57,6 @@ var positions = [];
 
 let JohanCost = 50
 
-images.push(img);
-positions.push({ x: 0, y: 0 });
-
 function summonJohan() {
     if (ataler >= JohanCost) {
         ataler -= JohanCost;
@@ -84,7 +81,8 @@ function moveJohan() {
     }
     requestAnimationFrame(moveJohan);
 }
-''
+
+
 let perCost = 20
 
 function summonPer() {
