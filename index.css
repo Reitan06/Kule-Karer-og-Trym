@@ -39,13 +39,6 @@ header {
 .soldat_knapp_container button {
     width: 7.14vw;
 }
-.penger{
-    display: flex;
-    height: 60px;
-    width: 240px;
-    margin: auto;
-    border-bottom: 5px black solid;
-}
 
 header img {
     height: 110px;
