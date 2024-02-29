@@ -39,6 +39,7 @@ function summonTrym() {
     trym.style.left = "80px"; 
     trym.style.top = "400px"; 
     document.body.appendChild(trym);
+    ataler -=100
 }
 
     function summonJohan() {
@@ -50,6 +51,7 @@ function summonTrym() {
         johan.style.top = "600px";
         document.body.appendChild(johan);
         moveCharacterRight(johan); // Start moving Johan right after summoning
+        ataler -=50
     }
 
     function summonPer() {
@@ -61,6 +63,7 @@ function summonTrym() {
         per.style.top = "600px";
         document.body.appendChild(per);
         moveCharacterRight(per); // Start moving Per right after summoning
+        ataler -=20
     }
 
     function summonJokkis() {
@@ -72,11 +75,13 @@ function summonTrym() {
         jokkis.style.top = "600px";
         document.body.appendChild(jokkis);
         moveCharacterRight(jokkis); // Start moving Jokkis right after summoning
+        ataler -=10
     }
-    
-    let ataler = 1;
+
+    let ataler = 50;
     
     setInterval(function() {
         ataler++;
         console.log("Antall tellere: " + ataler);
     }, 1000);
+
