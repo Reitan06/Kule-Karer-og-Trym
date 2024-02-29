@@ -41,6 +41,9 @@ function moveCharacterRight(characterElement) {
         }
     }, 100); // Adjust interval for smoother movement
 }
+
+let trymCost = 100
+
 function summonTrym() {
     if (ataler >= trymCost) {
         ataler -= trymCost;
@@ -66,6 +69,8 @@ function summonJohan() {
     ataler -= 50 }
 }
 
+let perCost = 20
+
 function summonPer() {
     if (ataler >= perCost) {
         ataler -= perCost;
@@ -80,7 +85,7 @@ function summonPer() {
     }
 }
 
-let jokkis = 10
+let jokkisCost = 10
 
 function summonJokkis() {
     if (ataler >= jokkisCost) {
