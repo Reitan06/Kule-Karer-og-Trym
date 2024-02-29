@@ -42,6 +42,7 @@ function summonTrym() {
     ataler -= 100
 }
 
+<<<<<<< HEAD
 
 function summonJohan() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -49,6 +50,22 @@ function summonJohan() {
         ctx.drawImage(img, x, y, 184, 184);
         requestAnimationFrame(moveImage);
     ataler -= 50
+=======
+let JohanCost = 50
+
+function summonJohan() {
+    if (ataler >= JohanCost) {
+        ataler -= JohanCost;
+        const johan = document.createElement("img");
+        johan.src = "bilder/johan_walking.png";
+        johan.alt = "Johan";
+        johan.classList.add("Johan");
+        johan.style.left = "80px";
+        johan.style.top = "600px";
+        document.body.appendChild(johan);
+        moveCharacterRight(johan); // Start moving Johan right after summoning
+    }
+>>>>>>> 03e78f59c91d0169c386d365c3231bf21e59faf4
 }
 
 function summonPer() {
