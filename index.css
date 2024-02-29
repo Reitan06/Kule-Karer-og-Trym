@@ -34,11 +34,11 @@ header {
     border: 2px black solid;
     display: flex;
     cursor: pointer;
-
 }
 
 .soldat_knapp_container button {
     width: 7.14vw;
+    cursor: pointer;
 }
 
 header img {
@@ -66,6 +66,16 @@ main img {
     width: 200px;
     padding-top: 50px;
     margin-bottom: 100px;
+}
+
+#saloon {
+    position: fixed;
+    left: 0px;
+}
+
+#totem {
+    position: fixed;
+    right: 0px;
 }
 
 
@@ -148,4 +158,10 @@ body {
 
 .dropdown-content a:hover {
     background-color: #d4950bba
+}
+
+canvas {
+    border: 10px solid black;
+    margin: auto;
+    margin-bottom: 110px;
 }
