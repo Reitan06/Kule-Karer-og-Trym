@@ -3,7 +3,7 @@
 let display = document.getElementById('timer');
 let seconds = 0;
 let minutes = 0;
-
+let ataler = 50;
 
 function startTimer() {
     setInterval(function () {
@@ -17,10 +17,9 @@ function startTimer() {
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
     document.getElementById('startknapp').style.display = 'none'
-    let ataler = 50;
     
     setInterval(function() {
-        ataler++;
+        ataler+=2;
         console.log("Antall tellere: " + ataler);
         document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
     }, 1000);
@@ -86,3 +85,25 @@ function summonTrym() {
         ataler -=10
     }
 
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+
+    var img = new Image();
+    img.src = "bilder/johan_walking.png"; 
+    var x = 0;
+    var y = 500;
+
+    function moveImage() {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        x += 1;
+        y += 1; 
+
+        ctx.drawImage(img, x, y, 184, 184);
+        requestAnimationFrame(moveImage);
+    }
+    img.onload = function() {
+        moveImage();
+    };
