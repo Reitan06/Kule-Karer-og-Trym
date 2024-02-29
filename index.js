@@ -41,15 +41,20 @@ function moveCharacterRight(characterElement) {
         }
     }, 100); // Adjust interval for smoother movement
 }
+
+let trymCost = 100
+
 function summonTrym() {
-    const trym = document.createElement("img");
-    trym.src = "bilder/WalkingTrym.png";
-    trym.alt = "trym";
-    trym.classList.add("trym");
-    trym.style.left = "80px";
-    trym.style.top = "400px";
-    document.body.appendChild(trym);
-    ataler -= 100
+    if (ataler >= trymCost) {
+        ataler -= trymCost;
+        const trym = document.createElement("img");
+        trym.src = "bilder/WalkingTrym.png";
+        trym.alt = "trym";
+        trym.classList.add("trym");
+        trym.style.left = "80px";
+        trym.style.top = "400px";
+        document.body.appendChild(trym);
+    }
 }
 
 let JohanCost = 50
@@ -68,7 +73,11 @@ function summonJohan() {
     }
 }
 
+let perCost = 20
+
 function summonPer() {
+    if (ataler >= perCost) {
+        ataler -= perCost;
     const per = document.createElement("img");
     per.src = "bilder/MovingPer.png";
     per.alt = "Per";
@@ -77,10 +86,14 @@ function summonPer() {
     per.style.top = "600px";
     document.body.appendChild(per);
     moveCharacterRight(per); // Start moving Per right after summoning
-    ataler -= 20
+    }
 }
 
+let jokkis = 10
+
 function summonJokkis() {
+    if (ataler >= jokkisCost) {
+        ataler -= jokkisCost;
     const jokkis = document.createElement("img");
     jokkis.src = "bilder/MovingJokkis.png";
     jokkis.alt = "Jokkis";
@@ -89,7 +102,7 @@ function summonJokkis() {
     jokkis.style.top = "600px";
     document.body.appendChild(jokkis);
     moveCharacterRight(jokkis); // Start moving Jokkis right after summoning
-    ataler -= 10
+    }
 }
 
 function startSound() {
