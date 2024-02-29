@@ -84,6 +84,16 @@ function summonTrym() {
         moveCharacterRight(jokkis); // Start moving Jokkis right after summoning
         ataler -=10
     }
+    function startSound() {
+        var themesong = document.getElementById("themesong");
+    
+        // Check if the audio is paused or not
+        if (themesong.paused) {
+            themesong.play(); // If paused, play the audio
+        } else {
+            themesong.pause(); // If playing, pause the audio
+        }
+    }
 
     var canvas = document.getElementById('myCanvas');
     var ctx = canvas.getContext('2d');
