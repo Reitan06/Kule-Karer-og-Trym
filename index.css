@@ -68,6 +68,16 @@ main img {
     margin-bottom: 100px;
 }
 
+#saloon {
+    position: fixed;
+    left: 0px;
+}
+
+#totem {
+    position: fixed;
+    right: 0px;
+}
+
 
 main{
     width: 100%;
@@ -151,5 +161,7 @@ body {
 }
 
 canvas {
-    border: 1px solid black;
+    border: 10px solid black;
+    margin: auto;
+    margin-bottom: 110px;
 }
