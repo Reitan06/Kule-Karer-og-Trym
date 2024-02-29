@@ -3,7 +3,7 @@
 let display = document.getElementById('timer');
 let seconds = 0;
 let minutes = 0;
-
+let ataler = 50;
 
 function startTimer() {
     setInterval(function () {
@@ -17,7 +17,6 @@ function startTimer() {
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
     document.getElementById('startknapp').style.display = 'none'
-    let ataler = 50;
     
     setInterval(function() {
         ataler++;
