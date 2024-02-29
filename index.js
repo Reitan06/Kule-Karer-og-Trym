@@ -68,7 +68,9 @@ function summonJohan() {
     images.push(newImg);
     positions.push({ x: 0, y: 0 });
     newImg.onload = function() {
-    moveJohan();
+    if (images.length === 1) {
+        moveJohan();
+    }
 }
 }
 
