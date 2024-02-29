@@ -92,14 +92,13 @@ function summonTrym() {
     var img = new Image();
     img.src = "bilder/johan_walking.png"; 
     var x = 0;
-    var y = 500;
+    var y = 450;
 
     function moveImage() {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         x += 1;
-        y += 1; 
 
         ctx.drawImage(img, x, y, 184, 184);
         requestAnimationFrame(moveImage);
