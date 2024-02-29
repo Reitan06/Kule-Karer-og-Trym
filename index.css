@@ -155,3 +155,7 @@ body {
 .dropdown-content a:hover {
     background-color: #d4950bba
 }
+
+canvas {
+    border: 1px solid black;
+}
