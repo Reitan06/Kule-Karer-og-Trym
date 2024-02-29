@@ -19,7 +19,7 @@ function startTimer() {
     document.getElementById('startknapp').style.display = 'none'
     
     setInterval(function() {
-        ataler++;
+        ataler+=2;
         console.log("Antall tellere: " + ataler);
         document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
     }, 1000);
