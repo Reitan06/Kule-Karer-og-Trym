@@ -102,7 +102,7 @@ function summonTrym() {
     var img = new Image();
     img.src = "bilder/johan_walking.png"; 
     var x = 0;
-    var y = 450;
+    var y = 300;
 
     function moveImage() {
 
