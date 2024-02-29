@@ -49,7 +49,7 @@ let trymCost = 100
 function summonTrym() {
     if (ataler >= trymCost) {
         ataler -= trymCost;
-        ataler -= 50;
+        ataler -= 100;
     
 
     var newTrym = new Image();
@@ -111,7 +111,7 @@ let perCost = 20
 function summonPer() {
     if (ataler >= perCost) {
         ataler -= perCost;
-        ataler -= 50;
+        ataler -= 20;
     
 
     var newPer = new Image();
@@ -141,7 +141,7 @@ let jokkisCost = 10
 function summonJokkis() {
     if (ataler >= jokkisCost) {
         ataler -= jokkisCost;
-        ataler -= 50;
+        ataler -= 10;
     
 
     var newJokkis = new Image();
