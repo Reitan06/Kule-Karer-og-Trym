@@ -34,11 +34,11 @@ header {
     border: 2px black solid;
     display: flex;
     cursor: pointer;
-
 }
 
 .soldat_knapp_container button {
     width: 7.14vw;
+    cursor: pointer;
 }
 
 header img {
