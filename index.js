@@ -30,7 +30,6 @@ function startTimer() {
 
 }
 
-
 let trymCost = 100
 
 function summonTrym() {
@@ -46,20 +45,43 @@ function summonTrym() {
     }
 }
 
+
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+var img = new Image();
+img.src = "bilder/johan_walking.png";
+var x = 0;
+var y = 220;
+var images = [];
+var positions = [];
+
 let JohanCost = 50
+
+images.push(img);
+positions.push({ x: 0, y: 0 });
 
 function summonJohan() {
     if (ataler >= JohanCost) {
         ataler -= JohanCost;
         ataler -= 50
  }
-        setInterval(moveJohan(),10)
+
+    var newImg = new Image();
+    newImg.src = "bilder/johan_walking.png";
+    images.push(newImg);
+    positions.push({ x: 0, y: 0 });
+    newImg.onload = function() {
+    moveJohan();
+}
 }
 
 function moveJohan() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    x += 1;
-    ctx.drawImage(img, x, y, 184, 184);
+    for (var i = 0; i < images.length; i++) {
+        positions[i].x += 1;
+        positions[i].y = 220;
+        ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
+    }
     requestAnimationFrame(moveJohan);
 }
 
@@ -105,12 +127,4 @@ function startSound() {
         themesong.pause(); // If playing, pause the audio
     }
 }
-
-var canvas = document.getElementById('myCanvas');
-var ctx = canvas.getContext('2d');
-var img = new Image();
-img.src = "bilder/johan_walking.png";
-var x = 0;
-var y = 220;
-
 
