@@ -73,3 +73,10 @@ function summonTrym() {
         document.body.appendChild(jokkis);
         moveCharacterRight(jokkis); // Start moving Jokkis right after summoning
     }
+    
+    let ataler = 1;
+    
+    setInterval(function() {
+        ataler++;
+        console.log("Antall tellere: " + ataler);
+    }, 1000);
