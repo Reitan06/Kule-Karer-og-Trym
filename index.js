@@ -163,13 +163,16 @@ function moveJokkis() {
 }
 
 function startSound() {
+    var themesong = document.getElementById("introimpact");
     var themesong = document.getElementById("themesong");
 
     // Check if the audio is paused or not
     if (themesong.paused) {
         themesong.play(); // If paused, play the audio
+        introimpact.play();
     } else {
-        themesong.pause(); // If playing, pause the audio
+        themesong.pause();
+        introimpact.pause(); // If playing, pause the audio
     }
 }
 
