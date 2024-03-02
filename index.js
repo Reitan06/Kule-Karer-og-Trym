@@ -5,6 +5,7 @@ let seconds = 0;
 let minutes = 0;
 let ataler = 100000;
 
+
 function startSpill() {
     startSound();
     startTimer();
@@ -44,6 +45,13 @@ var x = 0;
 var images = [];
 var positions = [];
 
+
+
+
+
+
+
+
 let trymCost = 100
 
 function summonTrym() {
@@ -70,14 +78,17 @@ function moveTrym() {
     for (var i = 0; i < images.length; i++) {
         positions[i].x += 1;
         positions[i].y = 220;
-        ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
+        ctx.drawImage(images[i], positions[i].x, positions[i].y, 158, 158);
         ctx.font = "16px Arial";
         ctx.fillStyle = "white";
-        ctx.fillText("Health: " + images[i].health, positions[i].x, positions[i].y - 10);
+        ctx.textAlign = "center";
+        ctx.fillText("left-aligned", x, 40);
+        ctx.fillText("Liv: " + images[i].health, positions[i].x, positions[i].y);
 
         //endrer livene til trym når han treffer et visst x-coordinat
-        if (positions[i].x >= 250) {
+        if (positions[i].x >= canvas.width- 150) {
             images[i].health -= 1;
+            positions[i].x -= 1;
         }
 
         //fjerner trym når han når null liv

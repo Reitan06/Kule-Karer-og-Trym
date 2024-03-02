@@ -72,12 +72,16 @@ main img {
 #saloon {
     position: fixed;
     left: 0px;
+    z-index: -1;
 }
 
 #totem {
     position: fixed;
     right: 0px;
+    z-index: -1;
+    display: block;
 }
+
 
 
 main {
@@ -110,6 +114,7 @@ body {
 .trym {
     height: 500px;
     width: 150px;
+    display: inline;
 }
 
 .per {
@@ -167,6 +172,8 @@ body {
 
 canvas {
     border: 10px solid black;
-    margin: auto;
+    margin: 0px;
     margin-bottom: 110px;
+    width: 1400;
+    height: 400px
 }
