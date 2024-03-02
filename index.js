@@ -3,7 +3,7 @@
 let display = document.getElementById('timer');
 let seconds = 0;
 let minutes = 0;
-let ataler = 50;
+let ataler = 100000;
 
 function startSpill() {
     startSound();
@@ -54,12 +54,14 @@ function summonTrym() {
     var newTrym = new Image();
     newTrym.src = "bilder/WalkingTrym.png"
     images.push(newTrym);
+    newTrym.health = 10000;
     positions.push({ x: 0, y: 0 });
     newTrym.onload = function() {
         if (images.length === 1) {
             moveTrym();
         }
     };
+    console.log(newTrym.health)
     }
 }
 
@@ -69,6 +71,21 @@ function moveTrym() {
         positions[i].x += 1;
         positions[i].y = 220;
         ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "white";
+        ctx.fillText("Health: " + images[i].health, positions[i].x, positions[i].y - 10);
+
+        //endrer livene til trym når han treffer et visst x-coordinat
+        if (positions[i].x >= 250) {
+            images[i].health -= 1;
+        }
+
+        //fjerner trym når han når null liv
+        if (images[i].health <= 0) {
+            images.splice(i, 1);
+            positions.splice(i, 1);
+            console.log(i.health)
+        }
     }
     requestAnimationFrame(moveTrym);
 }
