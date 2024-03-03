@@ -4,11 +4,13 @@ let display = document.getElementById('timer');
 let seconds = 0;
 let minutes = 0;
 let ataler = 100000;
+let totemHealth = 50000;
 
 
 function startSpill() {
     startSound();
     startTimer();
+    drawTotem();
 }
 function startTimer() {
     setInterval(function () {
@@ -25,7 +27,6 @@ function startTimer() {
 
     setInterval(function () {
         ataler += 2;
-        console.log("Antall tellere: " + ataler);
         document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
     }, 1000);
 
@@ -44,6 +45,36 @@ Jokkis.src = "bilder/MovingJokkis.png";
 var x = 0;
 var images = [];
 var positions = [];
+
+
+
+
+function drawTotem() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Draw the totem
+    ctx.drawImage(document.getElementById("totem"), canvas.width - 200, 200, 200, 200);
+    
+    // Display the totem's health points
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("Totem Health: " + totemHealth, canvas.width - 100, 180);
+
+
+
+    // Check if the totem's health points reach zero
+    if (totemHealth <= 0) {
+        // Implement game over logic or any other action
+        console.log("Game Over! Totem destroyed!");
+    } else {
+        requestAnimationFrame(drawTotem);
+    }
+}
+
+function damageTotem(amount) {
+    totemHealth -= amount;
+    console.log("Totem health reduced by " + amount + ". Remaining health: " + totemHealth);
+}
 
 
 
@@ -86,10 +117,12 @@ function moveTrym() {
         ctx.fillText("Liv: " + images[i].health, positions[i].x, positions[i].y);
 
         //endrer livene til trym når han treffer et visst x-coordinat
-        if (positions[i].x >= canvas.width- 150) {
-            images[i].health -= 1;
-            positions[i].x -= 1;
-        }
+    if (positions[i].x >= canvas.width - 200) {
+        damageTotem(10); // Adjust the damage amount as needed
+        images[i].health -= 1;
+        positions[i].x -= 1;
+    }
+
 
         //fjerner trym når han når null liv
         if (images[i].health <= 0) {
