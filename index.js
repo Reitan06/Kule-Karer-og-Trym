@@ -85,6 +85,10 @@ function damageTotem(amount) {
 
 let trymCost = 100
 
+
+
+
+//lager ny trym karakter
 function summonTrym() {
     if (ataler >= trymCost) {
         ataler -= trymCost;
@@ -101,9 +105,20 @@ function summonTrym() {
         }
     };
     console.log(newTrym.health)
+    
     }
 }
 
+
+
+
+
+
+
+
+
+
+//flytter trym mot høyre
 function moveTrym() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < images.length; i++) {
@@ -121,6 +136,7 @@ function moveTrym() {
         damageTotem(10); // Adjust the damage amount as needed
         images[i].health -= 1;
         positions[i].x -= 1;
+        document.getElementById('totemHealth').textContent = "Totem Health: " + totemHealth;
     }
 
 
@@ -133,6 +149,58 @@ function moveTrym() {
     }
     requestAnimationFrame(moveTrym);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let JohanCost = 50
