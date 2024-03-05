@@ -77,7 +77,7 @@ function drawTotem() {
     // Check if the totem's health points reach zero
     if (totemHealth <= 0) {
         document.getElementById('totem').style.display = 'none'; // Remove the totem
-        console.log("Totem destroyed!");
+        canvas.style.display = 'none';
     }
     else {
         document.getElementById('totem').textContent = "Totem Health: " + totemHealth;

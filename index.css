@@ -171,7 +171,6 @@ body {
 }
 
 canvas {
-    border: 10px solid black;
     margin: 0px;
     margin-bottom: 110px;
     width: 1400px;
