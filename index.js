@@ -128,7 +128,7 @@
     function moveTrym() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawTotem();
-        for (var i = 0; i < images.length; i++) {
+        for (let  i = 0; i < images.length; i++) {
             positions[i].x += 1;
             positions[i].y = 220;
             ctx.drawImage(images[i], positions[i].x, positions[i].y, 158, 158);
@@ -239,7 +239,7 @@
 
     function moveJohan() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < images.length; i++) {
+        for (let  i = 0; i < images.length; i++) {
             positions[i].x += 1;
             positions[i].y = 220;
             ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
@@ -269,7 +269,7 @@
 
     function movePer() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < images.length; i++) {
+        for (let  i = 0; i < images.length; i++) {
             positions[i].x += 1;
             positions[i].y = 220;
             ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
@@ -298,7 +298,7 @@
 
     function moveJokkis() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < images.length; i++) {
+        for (let  i = 0; i < images.length; i++) {
             positions[i].x += 1;
             positions[i].y = 220;
             ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
