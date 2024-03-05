@@ -4,7 +4,7 @@
     let  seconds = 0;
     let  minutes = 0;
     let  ataler = 100000;
-    let  totemHealth = 50000;
+    let  totemHealth = 50001;
 
 
 
