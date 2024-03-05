@@ -211,6 +211,7 @@ function moveCharacters() {
             imagesToRemove.push(i);
             console.log("Remaining totem health: " + totemHealth);
         }
+    }
 
         for (let j = imagesToRemove.length - 1; j >= 0; j--) {
             let indexToRemove = imagesToRemove[j];
@@ -218,7 +219,7 @@ function moveCharacters() {
             positions.splice(indexToRemove, 1);
             sizes.splice(indexToRemove, 1);
         }
-    }
+
     requestAnimationFrame(moveCharacters);
 }
 
