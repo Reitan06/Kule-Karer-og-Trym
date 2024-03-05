@@ -1,5 +1,3 @@
-    //TIMER-FUNKSJON I HEADER//
-
     let  display = document.getElementById('timer');
     let  seconds = 0;
     let  minutes = 0;
