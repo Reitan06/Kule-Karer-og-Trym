@@ -87,8 +87,6 @@ function drawTotem() {
 
 function damageTotem(amount) {
     totemHealth -= amount;
-    console.log("Totem health reduced by " + amount + ". Remaining health: " + totemHealth);
-
 }
 
 
@@ -192,6 +190,7 @@ function summonJokkis() {
 function moveCharacters() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawTotem();
+    let imagesToRemove = [];
     for (var i = 0; i < images.length; i++) {
         positions[i].x += positions[i].velocity;
         ctx.drawImage(images[i], positions[i].x, positions[i].y, sizes[i].x, sizes[i].y);
@@ -207,13 +206,17 @@ function moveCharacters() {
             positions[i].x -= positions[i].velocity;
         }
 
-
         //fjerner trym når han når null liv
         if (images[i].health <= 0) {
-            images.splice(i, 1);
-            positions.splice(i, 1);
-            console.log(i.health)
-            console.log(totemHealth)
+            imagesToRemove.push(i);
+            console.log("Remaining totem health: " + totemHealth);
+        }
+
+        for (let j = imagesToRemove.length - 1; j >= 0; j--) {
+            let indexToRemove = imagesToRemove[j];
+            images.splice(indexToRemove, 1);
+            positions.splice(indexToRemove, 1);
+            sizes.splice(indexToRemove, 1);
         }
     }
     requestAnimationFrame(moveCharacters);
