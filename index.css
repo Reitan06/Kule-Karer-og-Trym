@@ -29,14 +29,14 @@ header {
 }
 
 
-.soldat_knapp_container {
+#soldat_knapp_container {
     background-color: #ffff0057;
     border: 2px black solid;
-    display: flex;
+    display: none;
     cursor: pointer;
 }
 
-.soldat_knapp_container button {
+#soldat_knapp_container button {
     width: 7.14vw;
     cursor: pointer;
 }

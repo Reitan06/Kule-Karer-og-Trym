@@ -13,7 +13,14 @@
         startSound();
         startTimer();
         drawTotem();
+        soldatKnapp();
     }
+    
+    function soldatKnapp() {
+        document.getElementById('soldat_knapp_container').style.display = "flex"
+
+    }
+
     function startTimer() {
         setInterval(function () {
             seconds++;
