@@ -66,11 +66,6 @@ let sizes = [];
 function drawTotem() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-
-
-
-
-
     //lager healthscore-tekst til totem
     ctx.font = "16px Arial";
     ctx.fillStyle = "white";
@@ -85,7 +80,7 @@ function drawTotem() {
         console.log("Totem destroyed!");
     }
     else {
-        document.getElementById('totemHealth').textContent = "Totem Health: " + totemHealth;
+        document.getElementById('totem').textContent = "Totem Health: " + totemHealth;
         document.getElementById('totem').style.display = 'block';
     }
 }
@@ -203,7 +198,6 @@ function moveCharacters() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "white";
         ctx.textAlign = "center";
-        ctx.fillText("left-aligned", x, 40);
         ctx.fillText("Liv: " + images[i].health, positions[i].x, positions[i].y);
 
         //endrer livene til trym når han treffer et visst x-coordinat
