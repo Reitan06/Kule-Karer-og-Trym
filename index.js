@@ -12,8 +12,8 @@
     function startSpill() {
         startSound();
         startTimer();
-        drawTotem();
         soldatKnapp();
+        drawTotem();
     }
     
     function soldatKnapp() {
