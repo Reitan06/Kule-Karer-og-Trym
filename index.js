@@ -308,7 +308,7 @@
 
     function startSound() {
        let themesong = document.getElementById("introimpact");
-       let themesong = document.getElementById("themesong");
+       themesong = document.getElementById("themesong");
 
         // Check if the audio is paused or not
         if (themesong.paused) {
