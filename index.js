@@ -4,7 +4,7 @@
     let  seconds = 0;
     let  minutes = 0;
     let  ataler = 100000;
-    let  totemHealth = 50001;
+    let  totemHealth = 50000;
 
 
 
@@ -128,16 +128,8 @@
     function moveTrym() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawTotem();
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
         for (var i = 0; i < images.length; i++) {
             positions[i].x += 2;
-=======
->>>>>>> Stashed changes
-        for (let  i = 0; i < images.length; i++) {
-            positions[i].x += 1;
->>>>>>> d2979286faab63d1092ec66197f17a40df2af0cb
             positions[i].y = 220;
             ctx.drawImage(images[i], positions[i].x, positions[i].y, 158, 158);
             ctx.font = "16px Arial";
@@ -277,16 +269,8 @@
 
     function movePer() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
         for (var i = 0; i < images.length; i++) {
             positions[i].x += 2;
-=======
->>>>>>> Stashed changes
-        for (let  i = 0; i < images.length; i++) {
-            positions[i].x += 1;
->>>>>>> d2979286faab63d1092ec66197f17a40df2af0cb
             positions[i].y = 220;
             ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
         }
@@ -314,16 +298,8 @@
 
     function moveJokkis() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
         for (var i = 0; i < images.length; i++) {
             positions[i].x += 4;
-=======
->>>>>>> Stashed changes
-        for (let  i = 0; i < images.length; i++) {
-            positions[i].x += 1;
->>>>>>> d2979286faab63d1092ec66197f17a40df2af0cb
             positions[i].y = 220;
             ctx.drawImage(images[i], positions[i].x, positions[i].y, 184, 184);
         }
