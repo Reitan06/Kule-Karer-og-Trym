@@ -72,6 +72,8 @@ function drawTotem() {
     if (totemHealth <= 0) {
         document.getElementById('totem').style.display = 'none'; // Remove the totem
         canvas.style.display = 'none';
+        document.getElementById('startknapp').style.display = 'flex'
+        document.getElementById('startknapp').innerHTML = 'Play Again'
     }
     else {
         document.getElementById('totem').textContent = "Totem Health: " + totemHealth;
