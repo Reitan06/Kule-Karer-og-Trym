@@ -1,10 +1,10 @@
     //TIMER-FUNKSJON I HEADER//
 
-    let display = document.getElementById('timer');
-    let seconds = 0;
-    let minutes = 0;
-    let ataler = 100000;
-    let totemHealth = 50000;
+    let  display = document.getElementById('timer');
+    let  seconds = 0;
+    let  minutes = 0;
+    let  ataler = 100000;
+    let  totemHealth = 50000;
 
 
 
@@ -23,8 +23,8 @@
                 seconds = 0;
                 minutes++;
             }
-            let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
-            let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+            let  formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+            let  formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
             display.textContent = formattedMinutes + ":" + formattedSeconds;
         }, 1000);
         document.getElementById('startknapp').style.display = 'none'
@@ -36,19 +36,19 @@
 
     }
 
-    var canvas = document.getElementById('myCanvas');
-    var ctx = canvas.getContext('2d');
-    var Trym = new Image();
+   let canvas = document.getElementById('myCanvas');
+   let ctx = canvas.getContext('2d');
+   let Trym = new Image();
     Trym.src = "bilder/WalkingTrym.png";
-    var Johan = new Image();
+   let Johan = new Image();
     Johan.src = "bilder/johan_walking.png";
-    var Per = new Image();
+   let Per = new Image();
     Per.src = "bilder/MovingPer.png";
-    var Jokkis = new Image();
+   let Jokkis = new Image();
     Jokkis.src = "bilder/MovingJokkis.png";
-    var x = 0;
-    var images = [];
-    var positions = [];
+   let x = 0;
+   let images = [];
+   let positions = [];
 
 
 
@@ -92,7 +92,7 @@
 
 
 
-    let trymCost = 100
+    let  trymCost = 100
 
     //lager ny trym karakter
     function summonTrym() {
@@ -100,7 +100,7 @@
             ataler -= trymCost;
         
 
-        var newTrym = new Image();
+       let newTrym = new Image();
         newTrym.src = "bilder/WalkingTrym.png"
         images.push(newTrym);
         newTrym.health = 10000;
@@ -218,14 +218,14 @@
 
 
 
-    let JohanCost = 50
+    let  JohanCost = 50
 
     function summonJohan() {
         if (ataler >= JohanCost) {
             ataler -= JohanCost;
     
 
-        var newJohan = new Image();
+       let newJohan = new Image();
         newJohan.src = "bilder/johan_walking.png";
         images.push(newJohan);
         positions.push({ x: 0, y: 0 });
@@ -248,14 +248,14 @@
     }
 
 
-    let perCost = 20
+    let  perCost = 20
 
     function summonPer() {
         if (ataler >= perCost) {
             ataler -= perCost;
         
 
-        var newPer = new Image();
+       let newPer = new Image();
         newPer.src = "bilder/MovingPer.png";
         images.push(newPer);
         positions.push({ x: 0, y: 0 });
@@ -277,14 +277,14 @@
         requestAnimationFrame(movePer);
     }
 
-    let jokkisCost = 10
+    let  jokkisCost = 10
 
     function summonJokkis() {
         if (ataler >= jokkisCost) {
             ataler -= jokkisCost;
         
 
-        var newJokkis = new Image();
+       let newJokkis = new Image();
         newJokkis.src = "bilder/MovingJokkis.png";
         images.push(newJokkis);
         positions.push({ x: 0, y: 0 });
@@ -307,8 +307,8 @@
     }
 
     function startSound() {
-        var themesong = document.getElementById("introimpact");
-        var themesong = document.getElementById("themesong");
+       let themesong = document.getElementById("introimpact");
+       let themesong = document.getElementById("themesong");
 
         // Check if the audio is paused or not
         if (themesong.paused) {
