@@ -207,12 +207,12 @@ function moveCharacters() {
         }
     }
 
-        for (let j = imagesToRemove.length - 1; j >= 0; j--) {
-            let indexToRemove = imagesToRemove[j];
-            images.splice(indexToRemove, 1);
-            positions.splice(indexToRemove, 1);
-            sizes.splice(indexToRemove, 1);
-        }
+    for (let j = imagesToRemove.length - 1; j >= 0; j--) {
+        let indexToRemove = imagesToRemove[j];
+        images.splice(indexToRemove, 1);
+        positions.splice(indexToRemove, 1);
+        sizes.splice(indexToRemove, 1);
+    }
 
     requestAnimationFrame(moveCharacters);
 }
