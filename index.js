@@ -98,7 +98,7 @@ function summonTrym() {
         images.push(newTrym);
         newTrym.health = 7500;
         newTrym.damage = 80
-        positions.push({ x: 0, y: 90, velocity: 3 });
+        positions.push({ x: 0, y: 90, velocity: 2 });
         sizes.push({ x: 180, y: 350 });
         newTrym.onload = function () {
             if (images.length === 1) {
@@ -120,9 +120,9 @@ function summonJohan() {
         let newJohan = new Image();
         newJohan.src = "bilder/johan_walking.png";
         images.push(newJohan);
-        newJohan.health = 10000
-        newJohan.damage = 30
-        positions.push({ x: 0, y: 200, velocity: 2 });
+        newJohan.health = 20000
+        newJohan.damage = 7.5
+        positions.push({ x: 0, y: 200, velocity: 1 });
         sizes.push({ x: 180, y: 200 });
         newJohan.onload = function () {
             if (images.length === 1) {
@@ -143,7 +143,7 @@ function summonPer() {
         let newPer = new Image();
         newPer.src = "bilder/MovingPer.png";
         images.push(newPer);
-        newPer.health = 5000
+        newPer.health = 3000
         newPer.damage = 20
         positions.push({ x: 0, y: 260, velocity: 4 });
         sizes.push({ x: 180, y: 180 });
