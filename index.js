@@ -7,8 +7,6 @@ let totemHealth = 50000;
 
 
 
-
-
 function startSpill() {
     startSound();
     startTimer();
