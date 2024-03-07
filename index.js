@@ -121,7 +121,7 @@ function summonJohan() {
         newJohan.src = "bilder/johan_walking.png";
         images.push(newJohan);
         newJohan.health = 20000
-        newJohan.damage = 7.5
+        newJohan.damage = 5
         positions.push({ x: 0, y: 200, velocity: 1 });
         sizes.push({ x: 180, y: 200 });
         newJohan.onload = function () {
