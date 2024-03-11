@@ -180,6 +180,21 @@ function summonJokkis() {
     }
 }
 
+function summonEnemy() {
+    let newEnemy = new Image();
+    
+    // Array containing URLs of three different images
+    let imageUrls = [
+        "bilder/MovingAlex.png",
+        "bilder/MovingReitan.png",
+        "bilder/MovingOle.png"
+    ];
+    // Generate a random index between 0 and 2 (inclusive)
+    let randomIndex = Math.floor(Math.random() * imageUrls.length);
+    // Set the src attribute of the newEnemy image object to the randomly selected image URL
+    newEnemy.src = imageUrls[randomIndex];
+}
+
 
 function moveCharacters() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
