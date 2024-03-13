@@ -72,6 +72,9 @@ function drawTotem() {
         canvas.style.display = 'none';
         document.getElementById('startknapp').style.display = 'flex'
         document.getElementById('startknapp').innerHTML = 'Play Again'
+        document.getElementById('startknapp').addEventListener('click', function() {
+            location.reload(); 
+        });
     }
     else {
         document.getElementById('totem').textContent = "Totem Health: " + totemHealth;
