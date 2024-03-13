@@ -75,6 +75,9 @@ function drawTotem() {
         document.getElementById('startknapp').addEventListener('click', function() {
             location.reload(); 
         });
+
+        let victorySound = new Audio("lyder/victorysound.mp3");
+
     }
     else {
         document.getElementById('totem').textContent = "Totem Health: " + totemHealth;
@@ -196,6 +199,18 @@ function summonEnemy() {
     let randomIndex = Math.floor(Math.random() * imageUrls.length);
     // Set the src attribute of the newEnemy image object to the randomly selected image URL
     newEnemy.src = imageUrls[randomIndex];
+    console.log(newEnemy.src)
+        images.push(newEnemy);
+        newEnemy.health = 5000
+        newEnemy.damage = 30
+        positions.push({ x: 1100, y: 90, velocity: -4 });
+        sizes.push({ x: 400, y: 400 });
+        newEnemy.onload = function () {
+            if (images.length === 1) {
+                moveCharacters();
+            }
+        };
+        console.log(newEnemy.health)
 }
 
 
