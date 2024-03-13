@@ -66,9 +66,9 @@ function drawTotem() {
 
 
 
-    // Check if the totem's health points reach zero
+    //Sjekker om healthen til totemet er 0
     if (totemHealth <= 0) {
-        document.getElementById('totem').style.display = 'none'; // Remove the totem
+        document.getElementById('totem').style.display = 'none'; //Fjerner totemet dersom healthen er 0
         canvas.style.display = 'none';
         document.getElementById('startknapp').style.display = 'flex'
         document.getElementById('startknapp').innerHTML = 'Play Again'
@@ -189,15 +189,15 @@ function summonJokkis() {
 function summonEnemy() {
     let newEnemy = new Image();
     
-    // Array containing URLs of three different images
+    //Lager et Array for de ulike karakterene
     let imageUrls = [
         "bilder/MovingAlex.png",
         "bilder/MovingReitan.png",
         "bilder/MovingOle.png"
     ];
-    // Generate a random index between 0 and 2 (inclusive)
+    // generer en tilfeldig index i arrayet
     let randomIndex = Math.floor(Math.random() * imageUrls.length);
-    // Set the src attribute of the newEnemy image object to the randomly selected image URL
+   //definerer egenskaper som liv, posisjon osv
     newEnemy.src = imageUrls[randomIndex];
     console.log(newEnemy.src)
         images.push(newEnemy);
@@ -256,13 +256,14 @@ function startSound() {
     let themesong = document.getElementById("introimpact");
     themesong = document.getElementById("themesong");
 
-    // Check if the audio is paused or not
+    //Sjekker om lyd er på pause
     if (themesong.paused) {
-        themesong.play(); // If paused, play the audio
+        themesong.play();  //spiller lyd hvis lyden er på pause
         introimpact.play();
     } else {
-        themesong.pause();
-        introimpact.pause(); // If playing, pause the audio
+        themesong.pause(); 
+        introimpact.pause(); 
+        
     }
 }
 
