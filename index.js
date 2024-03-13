@@ -19,19 +19,23 @@ function soldatKnapp() {
 
 }
 
+//Setter igang timer funksjon
 function startTimer() {
     setInterval(function () {
         seconds++;
+        //øker minutt med 1 dersom det har gått 60 sekunder
         if (seconds === 60) {
             seconds = 0;
             minutes++;
         }
+        //Formaterer minutter og sekunder på en ryddig måte med 0 etter
         let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
         let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
     document.getElementById('startknapp').style.display = 'none'
 
+    //øker ataler med 2 for hvrt sekund som går
     setInterval(function () {
         ataler += 2;
         document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
