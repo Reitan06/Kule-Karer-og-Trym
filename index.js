@@ -105,9 +105,10 @@ function summonTrym() {
 
         let newTrym = new Image();
         newTrym.src = "bilder/WalkingTrym.png"
-        images.push(newTrym);
+        newTrym.type = "character";
         newTrym.health = 7500;
         newTrym.damage = 80
+        images.push(newTrym);
         positions.push({ x: 0, y: 90, velocity: 2 });
         sizes.push({ x: 180, y: 350 });
         newTrym.onload = function () {
@@ -120,6 +121,7 @@ function summonTrym() {
     }
 }
 
+
 let JohanCost = 50
 
 function summonJohan() {
@@ -129,9 +131,10 @@ function summonJohan() {
 
         let newJohan = new Image();
         newJohan.src = "bilder/johan_walking.png";
-        images.push(newJohan);
+        newJohan.type = "character";
         newJohan.health = 20000
         newJohan.damage = 5
+        images.push(newJohan);
         positions.push({ x: 0, y: 200, velocity: 1 });
         sizes.push({ x: 180, y: 200 });
         newJohan.onload = function () {
@@ -152,9 +155,10 @@ function summonPer() {
 
         let newPer = new Image();
         newPer.src = "bilder/MovingPer.png";
-        images.push(newPer);
+        newPer.type = "character";
         newPer.health = 3000
         newPer.damage = 20
+        images.push(newPer);
         positions.push({ x: 0, y: 260, velocity: 4 });
         sizes.push({ x: 180, y: 180 });
         newPer.onload = function () {
@@ -176,9 +180,10 @@ function summonJokkis() {
 
         let newJokkis = new Image();
         newJokkis.src = "bilder/MovingJokkis.png";
-        images.push(newJokkis);
+        newJokkis.type = "character";
         newJokkis.health = 2500
         newJokkis.damage = 15
+        images.push(newJokkis);
         positions.push({ x: 0, y: 300, velocity: 7 });
         sizes.push({ x: 100, y: 100 });
         newJokkis.onload = function () {
@@ -192,69 +197,99 @@ function summonJokkis() {
 
 function summonEnemy() {
     let newEnemy = new Image();
-    
-    //Lager et Array for de ulike karakterene
-    let imageUrls = [
-        "bilder/MovingAlex.png",
-        "bilder/MovingReitan.png",
-        "bilder/MovingOle.png"
-    ];
-    // generer en tilfeldig index i arrayet
+    let imageUrls = ["bilder/MovingAlex.png", "bilder/MovingReitan.png", "bilder/MovingOle.png"];
     let randomIndex = Math.floor(Math.random() * imageUrls.length);
-   //definerer egenskaper som liv, posisjon osv
     newEnemy.src = imageUrls[randomIndex];
-    console.log(newEnemy.src)
-        images.push(newEnemy);
-        newEnemy.health = 5000
-        newEnemy.damage = 30
-        positions.push({ x: 1100, y: 90, velocity: -4 });
-        sizes.push({ x: 400, y: 400 });
-        newEnemy.onload = function () {
-            if (images.length === 1) {
-                moveCharacters();
-            }
-        };
-        console.log(newEnemy.health)
+    newEnemy.type = "enemy"; // Legger til type-egenskap
+    newEnemy.health = 5000;
+    newEnemy.damage = 30;
+    images.push(newEnemy);
+    positions.push({ x: 1100, y: 90, velocity: -4 });
+    sizes.push({ x: 400, y: 400 });
+    newEnemy.onload = function () {
+        if (images.length === 1) {
+            moveCharacters();
+        }
+    };
 }
-
 
 function moveCharacters() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawTotem();
-    let imagesToRemove = [];
-    for (var i = 0; i < images.length; i++) {
-        positions[i].x += positions[i].velocity;
-        ctx.drawImage(images[i], positions[i].x, positions[i].y, sizes[i].x, sizes[i].y);
-        ctx.font = "16px Arial";
-        ctx.fillStyle = "white";
-        ctx.textAlign = "center";
-        ctx.fillText("Liv: " + images[i].health, positions[i].x, positions[i].y);
 
-        //endrer livene til trym når han treffer et visst x-coordinat
-        if (positions[i].x >= canvas.width - 250) {
-            damageTotem(images[i].damage); // Adjust the damage amount as needed
-            images[i].health -= 50;
-            positions[i].x -= positions[i].velocity;
+    let totemZoneStart = canvas.width - 250;
+
+    images.forEach((img, index) => {
+        // Assume no engagement initially
+        let isNearEnemy = false;
+
+        for (let j = 0; j < images.length; j++) {
+            if (index !== j && images[j].type !== img.type && Math.abs(positions[index].x - positions[j].x) < 100) {
+                isNearEnemy = true;
+                // Engage and deal immediate damage
+                images[j].health -= img.damage;
+                img.health -= images[j].damage;
+                img.engaged = images[j].engaged = true;
+
+                // Check if the enemy is defeated
+                if (images[j].health <= 0) {
+                    images[j].engaged = false; // Disengage the defeated enemy
+                }
+            }
         }
 
-        //fjerner trym når han når null liv
+        // Disengage and move if no nearby enemy is found
+        if (!isNearEnemy && !img.engaged) {
+            positions[index].x += positions[index].velocity;
+        } else if (img.engaged && images.findIndex(enemy => enemy.type !== img.type && enemy.engaged) === -1) {
+            // All enemies defeated or no engagement, allow movement
+            img.engaged = false;
+        }
+
+        // Handle interaction with the totem
+        if (positions[index].x >= totemZoneStart && img.type === "character") {
+            img.engaged = true; // Engage with the totem
+            damageTotem(img.damage);
+            img.health -= 50; // Totem damages the character
+            positions[index].x = totemZoneStart; // Stop at the totem
+        }
+    });
+
+    // Remove defeated characters
+    for (let i = images.length - 1; i >= 0; i--) {
         if (images[i].health <= 0) {
-            imagesToRemove.push(i);
-            console.log("Remaining totem health: " + totemHealth);
+            images.splice(i, 1);
+            positions.splice(i, 1);
+            sizes.splice(i, 1);
         }
     }
 
-    for (let j = imagesToRemove.length - 1; j >= 0; j--) {
-        let indexToRemove = imagesToRemove[j];
-        images.splice(indexToRemove, 1);
-        positions.splice(indexToRemove, 1);
-        sizes.splice(indexToRemove, 1);
-    }
+    drawAndCheckHealth(); // Call the function to draw characters and check their health
 
     requestAnimationFrame(moveCharacters);
 }
 
+function drawAndCheckHealth() {
+    for (let i = images.length - 1; i >= 0; i--) {
+        const img = images[i];
+        const position = positions[i];
+        const size = sizes[i];
 
+        // Only draw characters that are still alive
+        if (img.health > 0) {
+            ctx.drawImage(img, position.x, position.y, size.x, size.y);
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.fillText("Health: " + img.health, position.x + size.x / 2, position.y - 10);
+        } else {
+            // Remove characters with health <= 0
+            images.splice(i, 1);
+            positions.splice(i, 1);
+            sizes.splice(i, 1);
+        }
+    }
+}
 
 function startSound() {
     let themesong = document.getElementById("introimpact");
