@@ -41,6 +41,11 @@ header {
     cursor: pointer;
 }
 
+#enemyButton {
+    height: 113px;
+    font-size: 25px;
+}
+
 header img {
     height: 110px;
     width: 100%;
