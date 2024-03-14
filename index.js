@@ -107,7 +107,7 @@ function summonTrym() {
         newTrym.src = "bilder/WalkingTrym.png"
         images.push(newTrym);
         newTrym.health = 7500;
-        newTrym.damage = 80
+        newTrym.damage = 80;
         positions.push({ x: 0, y: 90, velocity: 2 });
         sizes.push({ x: 180, y: 350 });
         newTrym.onload = function () {
@@ -222,7 +222,7 @@ function moveCharacters() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawTotem();
     let imagesToRemove = [];
-    for (var i = 0; i < images.length; i++) {
+    for (let i = 0; i < images.length; i++) {
         positions[i].x += positions[i].velocity;
         ctx.drawImage(images[i], positions[i].x, positions[i].y, sizes[i].x, sizes[i].y);
         ctx.font = "16px Arial";
