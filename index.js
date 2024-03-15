@@ -53,7 +53,7 @@ function startTimer() {
     // Clear intervals when needed, for example when totem health reaches zero
     if (totemHealth <= 0) {
         clearInterval(enemyInterval);
-        clearInterval(doubleEnemyInterval);
+        clearInterval(tripleEnemyIntervalInterval);
     }
 
 }
