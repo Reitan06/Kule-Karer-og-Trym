@@ -1,7 +1,7 @@
 let display = document.getElementById('timer');
 let seconds = 0;
 let minutes = 0;
-let ataler = 100000;
+let ataler = 100;
 let totemHealth = 50000;
 
 
@@ -37,9 +37,24 @@ function startTimer() {
 
     //øker ataler med 2 for hvrt sekund som går
     setInterval(function () {
-        ataler += 2;
+        ataler += 5;
         document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
     }, 1000);
+    let enemyInterval = setInterval(function() {
+        summonEnemy();
+    }, 10000); // Execute every 30 seconds
+    
+    let tripleEnemyInterval = setInterval(function() {
+        summonEnemy();
+        summonEnemy();
+        summonEnemy()
+    }, 30000); // Execute twice every minute
+    
+    // Clear intervals when needed, for example when totem health reaches zero
+    if (totemHealth <= 0) {
+        clearInterval(enemyInterval);
+        clearInterval(doubleEnemyInterval);
+    }
 
 }
 
