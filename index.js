@@ -19,38 +19,38 @@ function soldatKnapp() {
 
 }
 
-//Setter igang timer funksjon
+
 function startTimer() {
     setInterval(function () {
         seconds++;
-        //øker minutt med 1 dersom det har gått 60 sekunder
+
         if (seconds === 60) {
             seconds = 0;
             minutes++;
         }
-        //Formaterer minutter og sekunder på en ryddig måte med 0 etter
+
         let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
         let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = formattedMinutes + ":" + formattedSeconds;
     }, 1000);
     document.getElementById('startknapp').style.display = 'none'
 
-    //øker ataler med 2 for hvrt sekund som går
+
     setInterval(function () {
         ataler += 5;
         document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
     }, 1000);
-    let enemyInterval = setInterval(function() {
+    let enemyInterval = setInterval(function () {
         summonEnemy();
-    }, 10000); // Execute every 30 seconds
-    
-    let tripleEnemyInterval = setInterval(function() {
+    }, 10000);
+
+    let tripleEnemyInterval = setInterval(function () {
         summonEnemy();
         summonEnemy();
         summonEnemy()
-    }, 30000); // Execute twice every minute
-    
-    // Clear intervals when needed, for example when totem health reaches zero
+    }, 30000);
+
+
     if (totemHealth <= 0) {
         clearInterval(enemyInterval);
         clearInterval(tripleEnemyIntervalInterval);
@@ -85,12 +85,12 @@ function drawTotem() {
 
 
     if (totemHealth <= 0) {
-        document.getElementById('totem').style.display = 'none'; 
+        document.getElementById('totem').style.display = 'none';
         canvas.style.display = 'none';
         document.getElementById('startknapp').style.display = 'flex'
         document.getElementById('startknapp').innerHTML = 'Play Again'
-        document.getElementById('startknapp').addEventListener('click', function() {
-            location.reload(); 
+        document.getElementById('startknapp').addEventListener('click', function () {
+            location.reload();
         });
 
         let victorySound = new Audio("lyder/victorysound.mp3");
@@ -110,7 +110,7 @@ function damageTotem(amount) {
 
 let trymCost = 100
 
-//lager ny trym karakter
+
 function summonTrym() {
     if (ataler >= trymCost) {
         ataler -= trymCost;
@@ -213,7 +213,7 @@ function summonEnemy() {
     let imageUrls = ["bilder/MovingAlex.png", "bilder/MovingReitan.png", "bilder/MovingOle.png"];
     let randomIndex = Math.floor(Math.random() * imageUrls.length);
     newEnemy.src = imageUrls[randomIndex];
-    newEnemy.type = "enemy"; 
+    newEnemy.type = "enemy";
     newEnemy.health = 5000;
     newEnemy.damage = 30;
     images.push(newEnemy);
@@ -246,7 +246,7 @@ function moveCharacters() {
 
 
                 if (images[j].health <= 0) {
-                    images[j].engaged = false; 
+                    images[j].engaged = false;
                 }
             }
         }
@@ -261,10 +261,10 @@ function moveCharacters() {
 
 
         if (positions[index].x >= totemZoneStart && img.type === "character") {
-            img.engaged = true; 
+            img.engaged = true;
             damageTotem(img.damage);
-            img.health -= 50; 
-            positions[index].x = totemZoneStart; 
+            img.health -= 50;
+            positions[index].x = totemZoneStart;
         }
     });
 
@@ -277,7 +277,7 @@ function moveCharacters() {
         }
     }
 
-    drawAndCheckHealth(); 
+    drawAndCheckHealth();
 
     requestAnimationFrame(moveCharacters);
 }
@@ -310,12 +310,11 @@ function startSound() {
 
 
     if (themesong.paused) {
-        themesong.play();  
+        themesong.play();
         introimpact.play();
     } else {
-        themesong.pause(); 
-        introimpact.pause(); 
-        
+        themesong.pause();
+        introimpact.pause();
+
     }
 }
-
