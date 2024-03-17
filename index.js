@@ -77,7 +77,6 @@ let sizes = [];
 function drawTotem() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //lager healthscore-tekst til totem
     ctx.font = "16px Arial";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
@@ -85,9 +84,8 @@ function drawTotem() {
 
 
 
-    //Sjekker om healthen til totemet er 0
     if (totemHealth <= 0) {
-        document.getElementById('totem').style.display = 'none'; //Fjerner totemet dersom healthen er 0
+        document.getElementById('totem').style.display = 'none'; 
         canvas.style.display = 'none';
         document.getElementById('startknapp').style.display = 'flex'
         document.getElementById('startknapp').innerHTML = 'Play Again'
@@ -215,7 +213,7 @@ function summonEnemy() {
     let imageUrls = ["bilder/MovingAlex.png", "bilder/MovingReitan.png", "bilder/MovingOle.png"];
     let randomIndex = Math.floor(Math.random() * imageUrls.length);
     newEnemy.src = imageUrls[randomIndex];
-    newEnemy.type = "enemy"; // Legger til type-egenskap
+    newEnemy.type = "enemy"; 
     newEnemy.health = 5000;
     newEnemy.damage = 30;
     images.push(newEnemy);
@@ -235,42 +233,42 @@ function moveCharacters() {
     let totemZoneStart = canvas.width - 250;
 
     images.forEach((img, index) => {
-        // Assume no engagement initially
+
         let isNearEnemy = false;
 
         for (let j = 0; j < images.length; j++) {
             if (index !== j && images[j].type !== img.type && Math.abs(positions[index].x - positions[j].x) < 100) {
                 isNearEnemy = true;
-                // Engage and deal immediate damage
+
                 images[j].health -= img.damage;
                 img.health -= images[j].damage;
                 img.engaged = images[j].engaged = true;
 
-                // Check if the enemy is defeated
+
                 if (images[j].health <= 0) {
-                    images[j].engaged = false; // Disengage the defeated enemy
+                    images[j].engaged = false; 
                 }
             }
         }
 
-        // Disengage and move if no nearby enemy is found
+
         if (!isNearEnemy && !img.engaged) {
             positions[index].x += positions[index].velocity;
         } else if (img.engaged && images.findIndex(enemy => enemy.type !== img.type && enemy.engaged) === -1) {
-            // All enemies defeated or no engagement, allow movement
+
             img.engaged = false;
         }
 
-        // Handle interaction with the totem
+
         if (positions[index].x >= totemZoneStart && img.type === "character") {
-            img.engaged = true; // Engage with the totem
+            img.engaged = true; 
             damageTotem(img.damage);
-            img.health -= 50; // Totem damages the character
-            positions[index].x = totemZoneStart; // Stop at the totem
+            img.health -= 50; 
+            positions[index].x = totemZoneStart; 
         }
     });
 
-    // Remove defeated characters
+
     for (let i = images.length - 1; i >= 0; i--) {
         if (images[i].health <= 0) {
             images.splice(i, 1);
@@ -279,7 +277,7 @@ function moveCharacters() {
         }
     }
 
-    drawAndCheckHealth(); // Call the function to draw characters and check their health
+    drawAndCheckHealth(); 
 
     requestAnimationFrame(moveCharacters);
 }
@@ -290,7 +288,7 @@ function drawAndCheckHealth() {
         const position = positions[i];
         const size = sizes[i];
 
-        // Only draw characters that are still alive
+
         if (img.health > 0) {
             ctx.drawImage(img, position.x, position.y, size.x, size.y);
             ctx.font = "16px Arial";
@@ -298,7 +296,7 @@ function drawAndCheckHealth() {
             ctx.textAlign = "center";
             ctx.fillText("Health: " + img.health, position.x + size.x / 2, position.y - 10);
         } else {
-            // Remove characters with health <= 0
+
             images.splice(i, 1);
             positions.splice(i, 1);
             sizes.splice(i, 1);
@@ -310,9 +308,9 @@ function startSound() {
     let themesong = document.getElementById("introimpact");
     themesong = document.getElementById("themesong");
 
-    //Sjekker om lyd er på pause
+
     if (themesong.paused) {
-        themesong.play();  //spiller lyd hvis lyden er på pause
+        themesong.play();  
         introimpact.play();
     } else {
         themesong.pause(); 
