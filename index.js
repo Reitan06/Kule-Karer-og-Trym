@@ -37,12 +37,12 @@ function startTimer() {
 
 
     setInterval(function () {
-        ataler += 5;
+        ataler += 15;
         document.querySelector('.penger p').textContent = "Antall Ataler: " + ataler + "α";
     }, 1000);
     let enemyInterval = setInterval(function () {
         summonEnemy();
-    }, 10000);
+    }, 4000);
 
     let tripleEnemyInterval = setInterval(function () {
         summonEnemy();
