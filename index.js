@@ -48,7 +48,7 @@ function startTimer() {
         summonEnemy();
         summonEnemy();
         summonEnemy()
-    }, 30000);
+    }, 20000);
 
 
     if (totemHealth <= 0) {
