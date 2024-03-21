@@ -87,13 +87,14 @@ function drawTotem() {
     if (totemHealth <= 0) {
         document.getElementById('totem').style.display = 'none';
         canvas.style.display = 'none';
-        document.getElementById('startknapp').style.display = 'flex'
-        document.getElementById('startknapp').innerHTML = 'Play Again'
+        document.getElementById('startknapp').style.display = 'flex';
+        document.getElementById('startknapp').innerHTML = 'Congratulations You Won! Play again?'
+        /*let victorySound = new Audio("lyder/victorysound.mp3");
+        victorySound.play();*/
         document.getElementById('startknapp').addEventListener('click', function () {
             location.reload();
         });
 
-        let victorySound = new Audio("lyder/victorysound.mp3");
 
     }
     else {
